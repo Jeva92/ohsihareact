@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import './index.css';
+import {Navi, Header, Content} from './App';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Navi />, document.getElementById('navi'));
+ReactDOM.render(<Header />, document.getElementById('header'));
+ReactDOM.render(<Content />, document.getElementById('content'));
