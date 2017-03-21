@@ -5,6 +5,14 @@ class CommentForm extends Component {
     super(props);
     this.state = {author: '', comment: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAuthorChange = this.handleAuthorChange.bind(this);
+    this.handleCommentChange = this.handleCommentChange.bind(this);
+  }
+  handleAuthorChange(e) {
+    this.setState({author: e.target.value});
+  }
+  handleCommentChange(e) {
+    this.setState({ comment: e.target.value});
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -20,8 +28,8 @@ class CommentForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' value={this.state.author}></input>
-          <input type='text' value={this.state.comment}></input>
+          <input type='text' onChange={this.handleAuthorChange} value={this.state.author}></input>
+          <input type='text' onChange={this.handleCommentChange} value={this.state.comment}></input>
           <input type='submit' value='Post'></input>
         </form>
       </div>
